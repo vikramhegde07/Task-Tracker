@@ -42,34 +42,34 @@ A powerful, scalable **task management system** built with modern web technologi
 /client      → React + TypeScript frontend
 ```
 
-🛠️ Setup Instructions (coming soon)
+## 🛠️ Setup Instructions (coming soon)
 
-This project is in active development. Setup instructions will be added once the initial version is ready to clone and run.
+    This project is in active development. Setup instructions will be added once the initial version is ready to clone and run.
 
-🌐 SaaS Vision (Future)
+## 🌐 SaaS Vision (Future)
 
 This project is being designed with a long-term goal: to evolve into a SaaS platform. The production setup will include:
 
-🧭 A marketing site (main domain) for product information
+    🧭 A marketing site (main domain) for product information
 
-🛠️ The app hosted on a subdomain (app.example.com)
+    🛠️ The app hosted on a subdomain (app.example.com)
 
-🧾 Subscription-based user access with plans & billing (Stripe or LemonSqueezy)
+    🧾 Subscription-based user access with plans & billing (Stripe or LemonSqueezy)
 
-📈 Analytics, error tracking, and multi-tenant support
+    📈 Analytics, error tracking, and multi-tenant support
 
-📌 Status
+## 📌 Status
 
-🔨 Currently under active development (2–3 week initial build phase)
+    🔨 Currently under active development (2–3 week initial build phase)
 
-📂 Initial backend and UI setup in progress
+    📂 Initial backend and UI setup in progress
 
-🧠 Planning for scalability and SaaS readiness
+    🧠 Planning for scalability and SaaS readiness
 
-👨‍💻 Author
+## 👨‍💻 Author
 
 Made by Vikram Hegde
 Follow along for progress, updates, and feature releases.
-🏷️ Tags
+## 🏷️ Tags
 
 react typescript express mongodb task-manager saas fullstack shadcn tailwind
