@@ -27,9 +27,7 @@ A powerful, scalable **task management system** built with modern web technologi
 - 🧾 Create, Update, Delete tasks
 - 🏷️ Labels, Priorities, and Due Dates
 - 📋 Task Status: To-do / In Progress / Done
-- 🧑‍🤝‍🧑 Assign tasks to users
 - 🧠 Filtering, Search, and Sorting
-- 📊 Dashboard Overview (per user and team)
 - 💬 Toast-based notifications
 - 🎨 Clean, responsive UI (mobile-friendly)
 
@@ -48,23 +46,14 @@ A powerful, scalable **task management system** built with modern web technologi
 
 ## 🌐 SaaS Vision (Future)
 
-This project is being designed with a long-term goal: to evolve into a SaaS platform. The production setup will include:
+This project is being designed with a long-term goal: to evolve into a SaaS platform.
 
-    🧭 A marketing site (main domain) for product information
-
-    🛠️ The app hosted on a subdomain (app.example.com)
-
-    🧾 Subscription-based user access with plans & billing (Stripe or LemonSqueezy)
-
-    📈 Analytics, error tracking, and multi-tenant support
 
 ## 📌 Status
 
     🔨 Currently under active development (2–3 week initial build phase)
 
     📂 Initial backend and UI setup in progress
-
-    🧠 Planning for scalability and SaaS readiness
 
 ## 👨‍💻 Author
 
