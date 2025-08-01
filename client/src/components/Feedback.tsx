@@ -13,6 +13,7 @@ const FeedbackForm = () => {
         message: "",
     });
     const [sending, setSending] = useState(false);
+    const [errSend, setErrSend] = useState(false);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
@@ -39,6 +40,8 @@ const FeedbackForm = () => {
             }
         } catch (err) {
             toast.error("An error occurred while sending.");
+            setErrSend(true);
+            setTimeout(() => setErrSend(false), 4000);
         } finally {
             setSending(false);
         }
@@ -46,15 +49,15 @@ const FeedbackForm = () => {
 
     return (
         <form
-            // action={"https://formsubmit.co/vikramhegde4037@gmail.com"}
-            // method="POST"
             onSubmit={handleSubmit}
             className="bg-card p-6 rounded-xl shadow space-y-4 max-w-2xl mx-auto my-15"
         >
             <h2 className="text-xl font-semibold">💬 Feedback</h2>
-            {/* <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_next" value="https://task.nodenomad.in/" /> */}
+            {errSend && (
+                <p className="text-xs text-muted-foreground mt-2">
+                    ⚠️ If the form doesn't submit, please check your content blocker or try a different browser.
+                </p>
+            )}
             <Input
                 placeholder="Your Name"
                 name="name"
