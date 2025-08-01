@@ -16,6 +16,7 @@ export const createTask = async (req, res) => {
             status,
             dueDate,
             userId: req.userId,
+            isDemo: true
         });
 
         await task.save();

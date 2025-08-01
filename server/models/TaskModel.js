@@ -34,6 +34,18 @@ const taskSchema = new mongoose.Schema({
         type: Date,
     },
 
+    isDemo: {
+        type: Boolean,
+        default: false,
+    },
+
+    autoDeleteAt: {
+        type: Date,
+        default: function () {
+            return this.isDemo ? new Date(Date.now() + 24 * 60 * 60 * 1000) : undefined;
+        },
+        expires: 0,
+    },
 }, { timestamps: true });
 
 export default mongoose.model("Task", taskSchema);
