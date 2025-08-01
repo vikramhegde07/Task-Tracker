@@ -55,7 +55,9 @@ const FeedbackForm = () => {
             className="bg-card p-6 rounded-xl shadow space-y-4 max-w-2xl mx-auto my-15"
         >
             <h2 className="text-xl font-semibold">💬 Feedback</h2>
-
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_next" value="https://task.nodenomad.in/" />
             <Input
                 placeholder="Your Name"
                 name="name"
