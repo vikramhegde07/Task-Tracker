@@ -37,7 +37,10 @@ const Login = () => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-background text-foreground px-4">
+        <div className="min-h-screen flex flex-col items-center justify-center bg-background text-foreground px-4">
+            <div className="w-fit mx-auto my-4 bg-yellow-100 dark:bg-yellow-800 text-yellow-900 dark:text-yellow-100 px-4 py-2 text-center text-sm">
+                ⚠️ Demo accounts are for evaluation only and will be deleted after 24 hours.
+            </div>
             <form
                 onSubmit={handleLogin}
                 className="w-full max-w-md rounded-lg p-6 shadow-xl"
