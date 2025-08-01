@@ -5,6 +5,7 @@ import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@
 import { PlusIcon } from "lucide-react";
 import TaskList from "@/components/Task/TaskList";
 import CreateTaskModal from "@/components/Task/CreateTaskModal";
+import FeedbackForm from "@/components/Feedback";
 
 const Home = () => {
     const [search, setSearch] = useState("");
@@ -16,6 +17,9 @@ const Home = () => {
     return (
         <div className="max-w-6xl mx-auto px-4 py-8">
             {/* Top Bar: Search + Filters */}
+            <div className="w-full bg-yellow-100 my-6 dark:bg-yellow-800 text-yellow-900 dark:text-yellow-100 px-4 py-2 text-center text-sm">
+                ⚠️ This is a demo environment. All accounts and data will be automatically deleted after 24 hours.
+            </div>
             <div className="flex flex-col md:flex-row md:items-center gap-4 mb-6">
                 <Input
                     type="text"
@@ -66,6 +70,8 @@ const Home = () => {
             <TaskList
                 filters={{ search, status: statusFilter, priority: priorityFilter, refresh, setRefresh }}
             />
+
+            <FeedbackForm />
 
             {/* Modal */}
             {showModal && (

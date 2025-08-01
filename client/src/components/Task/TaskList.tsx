@@ -58,6 +58,8 @@ const TaskList = ({ filters }: TaskListProps) => {
         try {
             const res = await api.get("/task");
             setTasks(res.data);
+            console.log(res.data);
+
         } catch (err) {
             toast.error("Failed to load tasks");
         }
@@ -118,6 +120,9 @@ const TaskList = ({ filters }: TaskListProps) => {
                                 <DropdownMenuContent align="end">
                                     <DropdownMenuItem onClick={() => handleDelete(task._id)}>
                                         Delete
+                                    </DropdownMenuItem>
+                                    <DropdownMenuItem onClick={() => { }}>
+                                        Mark as Done
                                     </DropdownMenuItem>
                                 </DropdownMenuContent>
                             </DropdownMenu>
