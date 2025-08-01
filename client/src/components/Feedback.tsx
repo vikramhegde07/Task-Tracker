@@ -2,8 +2,9 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-// import toast from "react-hot-toast";
+import toast from "react-hot-toast";
 import { SendHorizonal } from "lucide-react";
+import axios from "axios";
 
 const FeedbackForm = () => {
     const [formData, setFormData] = useState({
@@ -15,49 +16,45 @@ const FeedbackForm = () => {
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
-        setSending(false)
     };
 
-    // const handleSubmit = async (e: React.FormEvent) => {
-    //     e.preventDefault();
-    //     setSending(true);
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setSending(true);
 
-    //     try {
-    //         const res = await fetch(, {
-    //             method: "POST",
-    //             headers: {
-    //                 "Content-Type": "application/json",
-    //                 "Accept": "application/json",
-    //             },
-    //             body: JSON.stringify(formData),
-    //         });
+        try {
+            const res = await axios.post("https://formsubmit.co/vikramhegde4037@gmail.com", { formData }, {
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json",
+                },
+            });
 
-    //         const data = await res.json();
 
-    //         if (data.success === "true") {
-    //             toast.success("Feedback sent successfully!");
-    //             setFormData({ name: "", email: "", message: "" });
-    //         } else {
-    //             toast.error("Failed to send feedback.");
-    //         }
-    //     } catch (err) {
-    //         toast.error("An error occurred while sending.");
-    //     } finally {
-    //         setSending(false);
-    //     }
-    // };
+            if (res.status === 200) {
+                toast.success("Feedback sent successfully!");
+                setFormData({ name: "", email: "", message: "" });
+            } else {
+                toast.error("Failed to send feedback.");
+            }
+        } catch (err) {
+            toast.error("An error occurred while sending.");
+        } finally {
+            setSending(false);
+        }
+    };
 
     return (
         <form
-            action={"https://formsubmit.co/vikramhegde4037@gmail.com"}
-            method="POST"
-            // onSubmit={handleSubmit}
+            // action={"https://formsubmit.co/vikramhegde4037@gmail.com"}
+            // method="POST"
+            onSubmit={handleSubmit}
             className="bg-card p-6 rounded-xl shadow space-y-4 max-w-2xl mx-auto my-15"
         >
             <h2 className="text-xl font-semibold">💬 Feedback</h2>
-            <input type="hidden" name="_captcha" value="false" />
+            {/* <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_next" value="https://task.nodenomad.in/" />
+            <input type="hidden" name="_next" value="https://task.nodenomad.in/" /> */}
             <Input
                 placeholder="Your Name"
                 name="name"
