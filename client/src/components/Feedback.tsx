@@ -17,38 +17,40 @@ const FeedbackForm = () => {
         setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
     };
 
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        setSending(true);
+    // const handleSubmit = async (e: React.FormEvent) => {
+    //     e.preventDefault();
+    //     setSending(true);
 
-        try {
-            const res = await fetch("https://formsubmit.co/ajax/vikramhegde4037@gmail.com", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Accept": "application/json",
-                },
-                body: JSON.stringify(formData),
-            });
+    //     try {
+    //         const res = await fetch(, {
+    //             method: "POST",
+    //             headers: {
+    //                 "Content-Type": "application/json",
+    //                 "Accept": "application/json",
+    //             },
+    //             body: JSON.stringify(formData),
+    //         });
 
-            const data = await res.json();
+    //         const data = await res.json();
 
-            if (data.success === "true") {
-                toast.success("Feedback sent successfully!");
-                setFormData({ name: "", email: "", message: "" });
-            } else {
-                toast.error("Failed to send feedback.");
-            }
-        } catch (err) {
-            toast.error("An error occurred while sending.");
-        } finally {
-            setSending(false);
-        }
-    };
+    //         if (data.success === "true") {
+    //             toast.success("Feedback sent successfully!");
+    //             setFormData({ name: "", email: "", message: "" });
+    //         } else {
+    //             toast.error("Failed to send feedback.");
+    //         }
+    //     } catch (err) {
+    //         toast.error("An error occurred while sending.");
+    //     } finally {
+    //         setSending(false);
+    //     }
+    // };
 
     return (
         <form
-            onSubmit={handleSubmit}
+            action={"https://formsubmit.co/vikramhegde4037@gmail.com"}
+            method="POST"
+            // onSubmit={handleSubmit}
             className="bg-card p-6 rounded-xl shadow space-y-4 max-w-2xl mx-auto my-15"
         >
             <h2 className="text-xl font-semibold">💬 Feedback</h2>
