@@ -4,6 +4,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import toast from "react-hot-toast";
 import { SendHorizonal } from "lucide-react";
+import axios from "axios";
 
 const FeedbackForm = () => {
     const [formData, setFormData] = useState({
@@ -22,18 +23,14 @@ const FeedbackForm = () => {
         setSending(true);
 
         try {
-            const res = await fetch("https://formsubmit.co/ajax/vikramhegde4037@gmail.com", {
-                method: "POST",
+            const res = await axios.post("https://formsubmit.co/vikramhegde4037@gmail.com", { formData }, {
                 headers: {
                     "Content-Type": "application/json",
                     "Accept": "application/json",
                 },
-                body: JSON.stringify(formData),
             });
 
-            const data = await res.json();
-
-            if (data.success === "true") {
+            if (res.status === 200) {
                 toast.success("Feedback sent successfully!");
                 setFormData({ name: "", email: "", message: "" });
             } else {
