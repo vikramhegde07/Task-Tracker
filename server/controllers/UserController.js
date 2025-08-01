@@ -23,7 +23,8 @@ export const UserRegister = async (req, res) => {
         const newUser = new User({
             username: username,
             email: email,
-            passwordHash
+            passwordHash,
+            isDemo: true
         });
 
         await newUser.save();
