@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import toast from "react-hot-toast";
+// import toast from "react-hot-toast";
 import { SendHorizonal } from "lucide-react";
 
 const FeedbackForm = () => {
@@ -15,6 +15,7 @@ const FeedbackForm = () => {
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+        setSending(false)
     };
 
     // const handleSubmit = async (e: React.FormEvent) => {
